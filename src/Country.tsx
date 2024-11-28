@@ -23,8 +23,8 @@ export const Country = ({data, setFilterValue, addMoney} : CountryPropsType) => 
         setFilterValue('RUB')
     }
 
-    const addMoneyHandler = () => {
-
+    const addMoneyHandler = (banknote: BanknotsType) => {
+        addMoney(banknote)
     }
 
     const removeMoneyHandler = () => {
@@ -40,8 +40,8 @@ export const Country = ({data, setFilterValue, addMoney} : CountryPropsType) => 
             </div>
             <div>
                 {/*сделаем в последнюю очередь*/}
-                <button>Положить 100$</button>
-                <button>Положить 100р.</button>
+                <button onClick={()=>addMoneyHandler('USD')}>Положить 100$</button>
+                <button onClick={()=>addMoneyHandler('RUB')}>Положить 100р.</button>
                 <button>Снять 100$</button>
                 <button>Снять 100р.</button>
             </div>
